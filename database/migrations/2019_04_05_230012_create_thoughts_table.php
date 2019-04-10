@@ -15,11 +15,16 @@ class CreateThoughtsTable extends Migration
     {
         Schema::create('thoughts', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->unsignedBigInteger('user_id');
             $table->string('description');
             $table->integer('priority');
             $table->date('expiration_date');
             $table->unsignedBigInteger('idea_id')->nullable();
             $table->timestamps();
+
+            $table->foreign('user_id')
+                ->references('id')
+                ->on('users');
 
             $table->foreign('idea_id')
                 ->references('id')
