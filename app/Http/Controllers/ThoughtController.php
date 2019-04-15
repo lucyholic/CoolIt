@@ -14,13 +14,13 @@ class ThoughtController extends Controller
      */
     public function index()
     {
-        $thoughts = Thought::orderBy('expiration_date', 'DESC')->get();
+        $thoughts = Thought::orderBy('expiration_date')->get();
         return response()->json($thoughts);
     }
 
     public function getAll()
     {
-        $thoughts = Thought::orderBy('expiration_date', 'DESC')->get();
+        $thoughts = Thought::orderBy('expiration_date')->get();
         return response()->json($thoughts);
     }
 
@@ -42,7 +42,7 @@ class ThoughtController extends Controller
      */
     public function store(Request $request)
     {
-        $expiration_date = date('Y-m-d', strtotime("+2 weeks"));
+        $expiration_date = date('Y-m-d', strtotime("+3 days"));
         $validate = $request->validate([
             'description' => ['required'],
             'priority' => ['required', 'integer', 'between:1,5'], 

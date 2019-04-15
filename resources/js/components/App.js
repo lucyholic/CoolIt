@@ -10,9 +10,10 @@ class App extends Component {
       <BrowserRouter>
         <div className="containter">
           <Menu />
+          <br />
           <Route exact path='/' component={ Home } />
           <Route exact path='/thoughts' component={ Thoughts } />
-          <Route exact path='/newthought' component={ CreateThought} />
+          <Route exact path='/thoughts/create' component={ CreateThought} />
           <Route exact path='/ideas' component={ Ideas } />
         </div>
       </BrowserRouter>
