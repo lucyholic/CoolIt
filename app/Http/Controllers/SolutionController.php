@@ -14,7 +14,8 @@ class SolutionController extends Controller
      */
     public function index()
     {
-        //
+        $solutions = Solution::all();
+        return response()->json($solutions);
     }
 
     /**

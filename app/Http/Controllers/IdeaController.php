@@ -14,7 +14,14 @@ class IdeaController extends Controller
      */
     public function index()
     {
-        //
+        $ideas = Idea::all();
+        return response()->json($ideas);
+    }
+
+    public function getAll()
+    {
+        $ideas = Idea::all();
+        return response()->json($ideas);
     }
 
     /**

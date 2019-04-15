@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Solution extends Model
 {
     protected $fillable = [
-        "description"
+        'description'
     ];
 
     public function product() {

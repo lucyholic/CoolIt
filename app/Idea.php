@@ -7,10 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 class Idea extends Model
 {
     protected $fillable = [
-        "description",
-        "priority",
-        "expiration_date",
-        "solution_id"
+        'description',
+        'priority',
+        'expiration_date',
+        'solution_id'
     ];
 
     public function thoughts()
