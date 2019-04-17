@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import Menu from './Menu';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import { Home, Thoughts, Ideas, Solutions, Products, CreateThought } from '../pages';
+import { Home, Thoughts, Ideas, Solutions, Products, 
+  CreateThought, CreateIdea } from '../pages';
 
 class App extends Component {
   render() {
@@ -10,11 +11,11 @@ class App extends Component {
       <BrowserRouter>
         <div className="containter">
           <Menu />
-          <br />
           <Route exact path='/' component={ Home } />
           <Route exact path='/thoughts' component={ Thoughts } />
           <Route exact path='/thoughts/create' component={ CreateThought} />
           <Route exact path='/ideas' component={ Ideas } />
+          <Route exact path='/ideas/create' component={ CreateIdea } />
         </div>
       </BrowserRouter>
     )

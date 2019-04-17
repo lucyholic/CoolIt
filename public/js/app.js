@@ -65725,7 +65725,7 @@ function (_Component) {
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__["BrowserRouter"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "containter"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Menu__WEBPACK_IMPORTED_MODULE_2__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__["Route"], {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Menu__WEBPACK_IMPORTED_MODULE_2__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__["Route"], {
         exact: true,
         path: "/",
         component: _pages__WEBPACK_IMPORTED_MODULE_4__["Home"]
@@ -65741,6 +65741,10 @@ function (_Component) {
         exact: true,
         path: "/ideas",
         component: _pages__WEBPACK_IMPORTED_MODULE_4__["Ideas"]
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__["Route"], {
+        exact: true,
+        path: "/ideas/create",
+        component: _pages__WEBPACK_IMPORTED_MODULE_4__["CreateIdea"]
       })));
     }
   }]);
@@ -65859,6 +65863,74 @@ function (_Component) {
 
 /***/ }),
 
+/***/ "./resources/js/pages/CreateIdea.js":
+/*!******************************************!*\
+  !*** ./resources/js/pages/CreateIdea.js ***!
+  \******************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
+var CreateIdea =
+/*#__PURE__*/
+function (_Component) {
+  _inherits(CreateIdea, _Component);
+
+  function CreateIdea() {
+    _classCallCheck(this, CreateIdea);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(CreateIdea).apply(this, arguments));
+  }
+
+  _createClass(CreateIdea, [{
+    key: "render",
+    value: function render() {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "container py-4"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "row justify-content-center"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "col-md-8"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "card"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "card-header"
+      }, "New Idea"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "card-body"
+      }, "Form for New Idea")))));
+    }
+  }]);
+
+  return CreateIdea;
+}(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
+
+/* harmony default export */ __webpack_exports__["default"] = (CreateIdea);
+
+/***/ }),
+
 /***/ "./resources/js/pages/CreateThought.js":
 /*!*********************************************!*\
   !*** ./resources/js/pages/CreateThought.js ***!
@@ -65964,7 +66036,7 @@ function (_Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "row justify-content-center"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "col-md-6"
+        className: "col-md-8"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "card"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -66064,7 +66136,11 @@ function (_Component) {
     key: "render",
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "container"
+        className: "container py-4"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "row justify-content-center"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "col-md-8"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "card"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -66077,7 +66153,7 @@ function (_Component) {
         className: "card-header"
       }, "My Shelf"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "card-body"
-      }, "My Solutions, my products")));
+      }, "My Solutions, my products")))));
     }
   }]);
 
@@ -66340,7 +66416,7 @@ function (_Component) {
 /*!*************************************!*\
   !*** ./resources/js/pages/index.js ***!
   \*************************************/
-/*! exports provided: Home, Thoughts, Ideas, Solutions, Products, CreateThought */
+/*! exports provided: Home, Thoughts, Ideas, Solutions, Products, CreateThought, CreateIdea */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -66362,6 +66438,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /* harmony import */ var _CreateThought__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./CreateThought */ "./resources/js/pages/CreateThought.js");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "CreateThought", function() { return _CreateThought__WEBPACK_IMPORTED_MODULE_5__["default"]; });
+
+/* harmony import */ var _CreateIdea__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./CreateIdea */ "./resources/js/pages/CreateIdea.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "CreateIdea", function() { return _CreateIdea__WEBPACK_IMPORTED_MODULE_6__["default"]; });
+
 
 
 
@@ -66390,8 +66470,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! D:\Start_laravel\CoolIt\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! D:\Start_laravel\CoolIt\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! E:\Start_laravel\CoolIt\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! E:\Start_laravel\CoolIt\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
