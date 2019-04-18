@@ -60713,7 +60713,7 @@ if (false) {} else {
 /*!***************************************************************!*\
   !*** ./node_modules/react-router-dom/esm/react-router-dom.js ***!
   \***************************************************************/
-/*! exports provided: MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, generatePath, matchPath, withRouter, __RouterContext, BrowserRouter, HashRouter, Link, NavLink */
+/*! exports provided: BrowserRouter, HashRouter, Link, NavLink, MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, generatePath, matchPath, withRouter, __RouterContext */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -66367,7 +66367,7 @@ function (_Component) {
     value: function componentDidMount() {
       var _this2 = this;
 
-      axios__WEBPACK_IMPORTED_MODULE_1___default.a.get('/api/thoughts/getall').then(function (response) {
+      axios__WEBPACK_IMPORTED_MODULE_1___default.a.get('/api/thoughts').then(function (response) {
         _this2.setState({
           thoughts: response.data
         });
@@ -66470,8 +66470,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! E:\Start_laravel\CoolIt\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! E:\Start_laravel\CoolIt\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! D:\Start_laravel\CoolIt\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! D:\Start_laravel\CoolIt\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
