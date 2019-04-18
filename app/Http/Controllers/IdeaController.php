@@ -18,12 +18,6 @@ class IdeaController extends Controller
         return response()->json($ideas);
     }
 
-    public function getAll()
-    {
-        $ideas = Idea::orderBy('expiration_date')->get();
-        return response()->json($ideas);
-    }
-
     /**
      * Show the form for creating a new resource.
      *

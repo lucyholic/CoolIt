@@ -18,12 +18,6 @@ class ThoughtController extends Controller
         return response()->json($thoughts);
     }
 
-    public function getAll()
-    {
-        $thoughts = Thought::orderBy('expiration_date')->get();
-        return response()->json($thoughts);
-    }
-
     /**
      * Show the form for creating a new resource.
      *

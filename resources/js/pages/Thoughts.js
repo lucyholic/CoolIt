@@ -11,7 +11,7 @@ class Thoughts extends Component {
   }
 
   componentDidMount() {
-    axios.get('/api/thoughts/getall').then(response => {
+    axios.get('/api/thoughts').then(response => {
       this.setState({
         thoughts: response.data
       })
