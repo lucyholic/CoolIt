@@ -14,13 +14,13 @@ class IdeaController extends Controller
      */
     public function index()
     {
-        $ideas = Idea::all();
+        $ideas = Idea::orderBy('expiration_date')->get();
         return response()->json($ideas);
     }
 
     public function getAll()
     {
-        $ideas = Idea::all();
+        $ideas = Idea::orderBy('expiration_date')->get();
         return response()->json($ideas);
     }
 

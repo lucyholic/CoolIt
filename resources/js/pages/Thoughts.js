@@ -28,7 +28,7 @@ class Thoughts extends Component {
             <div className='card'>
               <div className='card-header'>
                 My Thoughts
-                <Link className='btn btn-outline-primary btn-sm mb-3 btn-right' to='/newthought'>
+                <Link className='btn btn-outline-primary btn-sm mb-3 btn-right' to='/thoughts/create'>
                 New Thought</Link>
               </div>
 

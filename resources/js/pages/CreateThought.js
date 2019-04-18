@@ -59,7 +59,7 @@ class CreateThought extends Component {
     return (
       <div className='container py-4'>
         <div className='row justify-content-center'>
-          <div className='col-md-6'>
+          <div className='col-md-8'>
             <div className='card'>
               <div className='card-header'>Create a New Thought</div>
               <div className='card-body'>
@@ -85,14 +85,14 @@ class CreateThought extends Component {
                       name='priority'
                       value={this.state.priority}
                       onChange={this.handleFieldChange}>
-                      {this.renderErrorFor('priority')}
-                      <option value='0' disabled>Select Priority</option>
-                      <option value='5'>5</option>
-                      <option value='4'>4</option>
-                      <option value='3'>3</option>
-                      <option value='2'>2</option>
-                      <option value='1'>1</option>
+                        <option />
+                        <option value='5'>5</option>
+                        <option value='4'>4</option>
+                        <option value='3'>3</option>
+                        <option value='2'>2</option>
+                        <option value='1'>1</option>
                     </select>
+                    {this.renderErrorFor('priority')}
                   </div>
                   
                   <button className='btn btn-primary'>Create</button>
