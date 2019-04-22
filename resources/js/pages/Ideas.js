@@ -6,7 +6,10 @@ class Ideas extends Component {
   constructor() {
     super()
     this.state = {
-      ideas: []
+      buttonText: 'Show All',
+      ideas: [],
+      filteredIdeas: [],
+      showAll: false
     }
   }
 

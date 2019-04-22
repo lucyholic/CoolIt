@@ -60713,7 +60713,7 @@ if (false) {} else {
 /*!***************************************************************!*\
   !*** ./node_modules/react-router-dom/esm/react-router-dom.js ***!
   \***************************************************************/
-/*! exports provided: BrowserRouter, HashRouter, Link, NavLink, MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, generatePath, matchPath, withRouter, __RouterContext */
+/*! exports provided: MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, generatePath, matchPath, withRouter, __RouterContext, BrowserRouter, HashRouter, Link, NavLink */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -66212,7 +66212,10 @@ function (_Component) {
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(Ideas).call(this));
     _this.state = {
-      ideas: []
+      buttonText: 'Show All',
+      ideas: [],
+      filteredIdeas: [],
+      showAll: false
     };
     return _this;
   }
@@ -66333,9 +66336,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
 
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
@@ -66357,8 +66360,13 @@ function (_Component) {
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(Thoughts).call(this));
     _this.state = {
-      thoughts: []
+      buttonText: 'Show All',
+      showAll: false,
+      thoughts: [],
+      filteredThoughts: []
     };
+    _this.handleShowToggle = _this.handleShowToggle.bind(_assertThisInitialized(_this));
+    _this.handleSort = _this.handleSort.bind(_assertThisInitialized(_this));
     return _this;
   }
 
@@ -66369,14 +66377,52 @@ function (_Component) {
 
       axios__WEBPACK_IMPORTED_MODULE_1___default.a.get('/api/thoughts').then(function (response) {
         _this2.setState({
-          thoughts: response.data
+          thoughts: response.data,
+          filteredThoughts: response.data.filter(function (thought) {
+            return thought.idea_id == null;
+          })
         });
+      });
+    }
+  }, {
+    key: "handleShowToggle",
+    value: function handleShowToggle() {
+      var _this$state = this.state,
+          thoughts = _this$state.thoughts,
+          showAll = _this$state.showAll;
+
+      if (showAll) {
+        this.setState({
+          filteredThoughts: thoughts.filter(function (thought) {
+            return thought.idea_id == null;
+          }),
+          buttonText: 'Show All',
+          showAll: false
+        });
+      } else {
+        this.setState({
+          filteredThoughts: thoughts,
+          buttonText: 'Show Unused',
+          showAll: true
+        });
+      }
+    }
+  }, {
+    key: "handleSort",
+    value: function handleSort() {
+      var filteredThoughts = this.state.filteredThoughts;
+      this.setState({
+        filteredThoughts: filteredThoughts.sort(function (a, b) {
+          return b.description.toLowerCase() < a.description.toLowerCase() ? 1 : -1;
+        })
       });
     }
   }, {
     key: "render",
     value: function render() {
-      var thoughts = this.state.thoughts;
+      var _this$state2 = this.state,
+          filteredThoughts = _this$state2.filteredThoughts,
+          buttonText = _this$state2.buttonText;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "container py-4"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -66392,9 +66438,31 @@ function (_Component) {
         to: "/thoughts/create"
       }, "New Thought")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "card-body"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "btn btn-secondary",
+        onClick: this.handleShowToggle
+      }, buttonText), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "dropdown show"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        className: "btn btn-secondary dropdown-toggle",
+        role: "button",
+        id: "dropdownMenuButton",
+        "data-toggle": "dropdown",
+        "aria-haspopup": "true",
+        "aria-expanded": "false"
+      }, "Sort Thoughts"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "dropdown-menu",
+        "aria-labelledby": "dropdownMenuButton"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "dropdown-item",
+        onClick: this.handleSort
+      }, "By Description"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "dropdown-item"
+      }, "By Expiration Date"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "dropdown-item"
+      }, "By Priority"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
         className: "list-group list-group-flush"
-      }, thoughts.map(function (thought) {
+      }, filteredThoughts.map(function (thought) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
           className: "list-group-item d-flex justify-content-between align-items-center",
           key: thought.id
