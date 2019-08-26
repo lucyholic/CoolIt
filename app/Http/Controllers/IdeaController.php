@@ -14,7 +14,8 @@ class IdeaController extends Controller
      */
     public function index()
     {
-        //
+        $ideas = Idea::orderBy('expiration_date')->get();
+        return response()->json($ideas);
     }
 
     /**

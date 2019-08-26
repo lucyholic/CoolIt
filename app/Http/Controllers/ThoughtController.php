@@ -14,7 +14,8 @@ class ThoughtController extends Controller
      */
     public function index()
     {
-        //
+        $thoughts = Thought::orderBy('expiration_date')->get();
+        return response()->json($thoughts);
     }
 
     /**
@@ -24,7 +25,7 @@ class ThoughtController extends Controller
      */
     public function create()
     {
-        //
+
     }
 
     /**
@@ -35,7 +36,19 @@ class ThoughtController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $expiration_date = date('Y-m-d', strtotime("+3 days"));
+        $validate = $request->validate([
+            'description' => ['required'],
+            'priority' => ['required', 'integer', 'between:1,5'],
+        ]);
+
+        $thought = Thought::create([
+            'description' => $validate['description'],
+            'priority' => $validate['priority'],
+            'expiration_date' => $expiration_date
+        ]);
+
+        return response()->json('Thought added');
     }
 
     /**
@@ -80,6 +93,7 @@ class ThoughtController extends Controller
      */
     public function destroy(Thought $thought)
     {
-        //
+        $thought->delete();
+        return response()->json('Thought deleted');
     }
 }
