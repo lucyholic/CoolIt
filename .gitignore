@@ -5,6 +5,7 @@
 /vendor
 /public/js
 /public/css
+/resources/.DS_Store
 .env
 .phpunit.result.cache
 Homestead.json
